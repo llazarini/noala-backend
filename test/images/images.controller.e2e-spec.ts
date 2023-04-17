@@ -5,7 +5,6 @@ import { AppModule } from '../../src/app.module';
 
 describe('ImagesController', () => {
     let app: INestApplication;
-    const service: any = { findRandom: () => ['test'] };
 
     beforeAll(async () => {
         const moduleFixture: TestingModule = await Test.createTestingModule({
