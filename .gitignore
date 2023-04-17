@@ -2,6 +2,10 @@
 /dist
 /node_modules
 
+#Mysql data
+/database/data/mysql/*
+/database/data/*
+
 # Logs
 logs
 *.log

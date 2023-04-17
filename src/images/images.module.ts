@@ -1,12 +1,14 @@
 import { Module } from '@nestjs/common';
 import { ImagesService } from './images.service';
-import { Image } from 'src/models/image.model';
-import { SequelizeModule } from '@nestjs/sequelize';
+import { Image } from '../entities/image.entity';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { ImagesController } from './images.controller';
 
 @Module({
     imports: [
-        SequelizeModule.forFeature([Image]),
+        TypeOrmModule.forFeature([Image]),
     ],
     providers: [ImagesService],
+    controllers: [ImagesController]
 })
 export class ImagesModule {}

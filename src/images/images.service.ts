@@ -1,15 +1,21 @@
 import { Injectable } from '@nestjs/common';
-import { InjectModel } from '@nestjs/sequelize';
-import { Image } from 'src/models/image.model';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Image } from '../entities/image.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class ImagesService {
     constructor(
-        @InjectModel(Image)
-        private image: typeof Image,
+        @InjectRepository(Image)
+        private imageRepository: Repository<Image>,
     ) {}
-    
-    async findAll(): Promise<Image[]> {
-        return this.image.findAll();
+
+    findRandom(): Promise<Image[]> {
+        return this.imageRepository
+            .createQueryBuilder('image')
+            .select()
+            .orderBy('RAND()')
+            .take(5)
+            .getMany();
     }
 }

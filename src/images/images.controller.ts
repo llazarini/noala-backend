@@ -5,8 +5,8 @@ import { ImagesService } from './images.service';
 export class ImagesController {
     constructor(private service: ImagesService) { }
 
-    @Get('index')
-    findAll() {
-        return this.service.findAll();
+    @Get('random')
+    findRandom() {
+        return this.service.findRandom();
     }
 }
