@@ -36,7 +36,8 @@ $ yarn run start:prod
 $ yarn command images-seed
 ```
 
-## Test
+## Testing
+For testing, I implemented a simple e2e test
 
 ```bash
 # unit tests
@@ -44,7 +45,4 @@ $ yarn run test
 
 # e2e tests
 $ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
 ```
