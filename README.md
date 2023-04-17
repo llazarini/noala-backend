@@ -1,6 +1,15 @@
 # Noala
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+The backend was made with NestJS with a MySQL database running inside a docker container.
+
+## How to put the MySQL up
+```bash
+# Create a network called backend
+$ docker create network backend
+
+# This will create a mysql data directory inside the database directory
+$ docker-compose up -d
+```
 
 ## Installation
 
@@ -19,6 +28,12 @@ $ yarn run start:dev
 
 # production mode
 $ yarn run start:prod
+```
+
+## How seed the database
+```bash
+# I created a command to seed the database using the Dog API
+$ yarn command images-seed
 ```
 
 ## Test
